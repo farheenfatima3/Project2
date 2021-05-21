@@ -1,0 +1,54 @@
+var readlineSync=require("readline-sync")
+const chalk=require("chalk");
+var score=0;
+var user=readlineSync.question("Your name please ?");
+console.log(chalk.blue("Welcome "+user.toUpperCase()+"!!"));
+
+function play(question,answer){
+var userAns=readlineSync.question(question);
+if (userAns===questions[i].answer){
+  console.log(chalk.italic.green("correct!! badhayi!"));
+  score=score+1;
+  console.log(chalk.greenBright("Apke score hai: "),chalk.bold.green(score));
+}else{
+  console.log(chalk.italic.bgRed("Galat jawab. Afsoos, ap mujhe nahi jante"));
+  score=score;
+  console.log(chalk.redBright("Apke score hai: "),chalk.bold.red(score));
+}
+}
+var questions=[{
+  question:"My favorite food?\n(a)spring roll\n(b)burger\n(c)pizza\n(d)seekh kabab ",
+  answer:"a"
+},
+{
+  question:"My favorite place?\n(a)hyderabad\n(b)rajasthan\n(c)gujarath\n(d)mumbai ",
+  answer:"a"
+},
+{
+  question:"My favorite color?\n(a)orange\n(b)blue\n(c)green\n(d)yellow ",
+  answer:"b"
+},
+{
+  question:"What is 3+3?\n(a)6\n(b)4\n(c)2\n(d)33 ",
+  answer:"d"
+},
+{
+  question:"What is my age?\n(a)25\n(b)22\n(c)28\n(d)27 ",
+  answer:"d"
+},
+{
+  question:"My favorite timepass?\n(a)facebook\n(b)whatsapp\n(c)instagram\n(d)none of the above ",
+  answer:"c"
+},
+]
+
+for (i=0;i<questions.length;i++){
+  curque=questions[i];
+  play(curque.question,curque.answer)
+}
+var highscore=4;
+if (highscore<score){
+  console.log(chalk.bold.bgRed.greenBright("Congratulations, you have set the highscores",score))
+}else{
+  console.log("Final score: ",score)
+}
