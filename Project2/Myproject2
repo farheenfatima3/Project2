@@ -7,13 +7,13 @@ console.log(chalk.blue("Welcome "+user.toUpperCase()+"!!"));
 function play(question,answer){
 var userAns=readlineSync.question(question);
 if (userAns===questions[i].answer){
-  console.log(chalk.italic.green("correct!! badhayi!"));
+  console.log(chalk.italic.green("Correct!!"));
   score=score+1;
-  console.log(chalk.greenBright("Apke score hai: "),chalk.bold.green(score));
+  console.log(chalk.greenBright("Score is: "),chalk.bold.green(score));
 }else{
-  console.log(chalk.italic.bgRed("Galat jawab. Afsoos, ap mujhe nahi jante"));
+  console.log(chalk.italic.bgRed("Oops! wrong answer"));
   score=score;
-  console.log(chalk.redBright("Apke score hai: "),chalk.bold.red(score));
+  console.log(chalk.redBright("Score is: "),chalk.bold.red(score));
 }
 }
 var questions=[{
